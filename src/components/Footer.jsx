@@ -1,29 +1,62 @@
 // src/components/Footer.jsx
+import { motion } from "framer-motion";
+
 export default function Footer() {
+  const hoverUp = {
+    whileHover: { y: -3, transition: { type: "spring", stiffness: 300 } },
+  };
+
   return (
-    <footer className="bg-gray-900 text-gray-300 py-10">
-      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+    <footer className="py-10" style={{ backgroundColor: "rgb(15, 22, 48)" }}>
+      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8 text-gray-300">
+
         <div>
-          <h3 className="text-xl font-semibold text-white mb-3">Digimax</h3>
-          <p>Your trusted partner in digital growth and online success.</p>
+          <motion.h3
+            className="text-xl font-semibold text-white mb-3"
+            {...hoverUp}
+          >
+            SMJ Solutions
+          </motion.h3>
+          <motion.p {...hoverUp}>
+            Your trusted partner in digital growth and online success.
+          </motion.p>
         </div>
+
         <div>
-          <h3 className="text-xl font-semibold text-white mb-3">Quick Links</h3>
+          <motion.h3 className="text-xl font-semibold text-white mb-3" {...hoverUp}>
+            Quick Links
+          </motion.h3>
           <ul className="space-y-2">
-            <li><a href="#hero" className="hover:text-yellow-400">Home</a></li>
-            <li><a href="#services" className="hover:text-yellow-400">Services</a></li>
-            <li><a href="#portfolio" className="hover:text-yellow-400">Portfolio</a></li>
+            {["Home", "Services", "Portfolio", "Contact"].map((link, i) => (
+              <li key={i}>
+                <motion.a
+                  href={`#${link.toLowerCase()}`}
+                  className="hover:text-blue-500 transition"
+                  {...hoverUp}
+                >
+                  {link}
+                </motion.a>
+              </li>
+            ))}
           </ul>
         </div>
+
         <div>
-          <h3 className="text-xl font-semibold text-white mb-3">Contact</h3>
-          <p>Email: info@digimax.com</p>
-          <p>Phone: +92 300 1234567</p>
+          <motion.h3 className="text-xl font-semibold text-white mb-3" {...hoverUp}>
+            Contact
+          </motion.h3>
+          <motion.p {...hoverUp}>Email: info@smlsols.com</motion.p>
+          <motion.p {...hoverUp}>Phone: +92 300 1234567</motion.p>
         </div>
+
       </div>
-      <div className="text-center text-gray-500 mt-10 border-t border-gray-800 pt-6">
-        © {new Date().getFullYear()} Digimax. All rights reserved.
-      </div>
+
+      <motion.div
+        className="text-center text-gray-500 mt-10 pt-6"
+        whileHover={{ y: -2, transition: { type: "spring", stiffness: 300 } }}
+      >
+        © {new Date().getFullYear()} SMJ. All rights reserved.
+      </motion.div>
     </footer>
   );
 }
