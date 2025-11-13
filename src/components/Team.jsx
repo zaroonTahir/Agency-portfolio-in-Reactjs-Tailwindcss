@@ -3,7 +3,7 @@ import { FaLinkedin, FaTwitter, FaInstagram, FaFacebookF } from "react-icons/fa"
 
 const teamMembers = [
   {
-    name: "Zaroon Tahir",
+    name: "Adan",
     role: "Founder & CEO",
     image: "https://randomuser.me/api/portraits/men/32.jpg",
     linkedin: "#",
