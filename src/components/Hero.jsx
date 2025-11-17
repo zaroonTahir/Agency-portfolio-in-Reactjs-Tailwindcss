@@ -25,7 +25,7 @@ export default function Hero() {
           transition={{ duration: 1 }}
         >
           <span className="text-sm md:text-base tracking-widest text-purple-400 uppercase bg-purple-900 bg-opacity-30 px-4 py-1 rounded-full">
-            Welcome to SMJ Solutions
+            Welcome to Zuni Solutions
           </span>
 
           <h1 className="mt-6 text-4xl md:text-6xl font-bold leading-tight">
